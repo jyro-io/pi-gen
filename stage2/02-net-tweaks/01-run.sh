@@ -1,5 +1,12 @@
 #!/bin/bash -e
 
+## osss-monitor
+install -v -d "${ROOTFS_DIR}/etc/hostapd"
+install -v -m -b 600 files/hostapd.conf "${ROOTFS_DIR}/etc/hostapd/"
+install -v -m -b 600 files/dnsmasq.conf "${ROOTFS_DIR}/etc/"
+install -v -m -b 600 files/dhcpcd.conf "${ROOTFS_DIR}/etc/"
+##
+
 install -v -d					"${ROOTFS_DIR}/etc/wpa_supplicant"
 install -v -m 600 files/wpa_supplicant.conf	"${ROOTFS_DIR}/etc/wpa_supplicant/"
 
