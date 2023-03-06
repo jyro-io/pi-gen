@@ -10,6 +10,7 @@ install -v -m 600 -b files/dnsmasq.conf "${ROOTFS_DIR}/etc/"
 install -v -m 600 -b files/dhcpcd.conf "${ROOTFS_DIR}/etc/"
 
 on_chroot << EOF
+	SUDO_USER="${FIRST_USER_NAME}" update-alternatives --set iptables /usr/sbin/iptables-legacy
 	SUDO_USER="${FIRST_USER_NAME}" iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 	SUDO_USER="${FIRST_USER_NAME}" sh -c "iptables-save > /etc/iptables.ipv4.nat"
 EOF
