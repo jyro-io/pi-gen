@@ -3,4 +3,4 @@ raspberrypi-net-mods
 dhcpcd5
 network-manager
 net-tools
-hostapd dnsmasq bridge-utils
+hostapd dnsmasq
