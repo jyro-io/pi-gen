@@ -5,6 +5,7 @@ install -v -d "${ROOTFS_DIR}/etc/hostapd"
 install -v -m 600 -b files/hostapd.conf "${ROOTFS_DIR}/etc/hostapd/"
 install -v -m 600 -b files/dnsmasq.conf "${ROOTFS_DIR}/etc/"
 install -v -m 600 -b files/dhcpcd.conf "${ROOTFS_DIR}/etc/"
+install -v -m 600 -b files/cronfile "${ROOTFS_DIR}/etc/"
 
 on_chroot << EOF
 	echo "DAEMON_CONF=\"/etc/hostapd/hostapd.conf\"" >> /etc/default/hostapd
@@ -13,5 +14,7 @@ on_chroot << EOF
 	SUDO_USER="${FIRST_USER_NAME}" systemctl enable hostapd
 	SUDO_USER="${FIRST_USER_NAME}" systemctl enable dnsmasq
 	SUDO_USER="${FIRST_USER_NAME}" systemctl daemon-reload
+
+	SUDO_USER="${FIRST_USER_NAME}" crontab /etc/cronfile
 EOF
 ##

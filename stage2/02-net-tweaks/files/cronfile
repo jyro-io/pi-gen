@@ -1,0 +1,4 @@
+# Evidently I cannot get dhcpcd to start correctly on boot to save my life,
+# so this hack is necessary for now.
+@reboot systemctl restart dhcpcd
+@reboot systemctl restart hostapd
