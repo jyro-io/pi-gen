@@ -9,9 +9,12 @@ install -v -m 600 -b files/dhcpcd.conf "${ROOTFS_DIR}/etc/"
 on_chroot << EOF
 	echo "DAEMON_CONF=\"/etc/hostapd/hostapd.conf\"" >> /etc/default/hostapd
 	echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
-	
+
 	systemctl enable dhcpcd
 	systemctl enable dnsmasq
+
+	sed -i -z 's/[Service]\n/[Service]\nExecStartPre=\/bin\/sleep 15\n/' /lib/systemd/system/hostapd.service
+	systemctl daemon-reload
 	systemctl enable hostapd
 EOF
 ##
