@@ -6,5 +6,5 @@ install -v -m 600 files/config.yaml "${ROOTFS_DIR}/opt/osss/"
 install -v -m 600 files/osss-camera.service "${ROOTFS_DIR}/lib/systemd/system/"
 
 on_chroot << EOF
-	systemctl enable osss-camera
+	SUDO_USER="${FIRST_USER_NAME}" systemctl enable osss-camera
 EOF
