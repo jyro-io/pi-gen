@@ -13,7 +13,7 @@ on_chroot << EOF
 	systemctl enable dhcpcd
 	systemctl enable dnsmasq
 
-	sed -i -z 's/[Service]\n/[Service]\nExecStartPre=\/bin\/sleep 15\n/' /lib/systemd/system/hostapd.service
+	sed -i -z 's/\[Service\]\n/\[Service\]\nExecStartPre=\/bin\/sleep 15\n/' /lib/systemd/system/hostapd.service
 	systemctl daemon-reload
 	systemctl enable hostapd
 EOF
