@@ -10,4 +10,4 @@ on_chroot << EOF
 EOF
 
 install -o ${FIRST_USER_NAME} -v -d "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config/autostart/"
-install -o ${FIRST_USER_NAME}-v -m 600 files/camera-stream.desktop "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config/autostart/"
+install -o ${FIRST_USER_NAME} -v -m 600 files/camera-stream.desktop "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config/autostart/"
