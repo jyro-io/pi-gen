@@ -9,5 +9,5 @@ on_chroot << EOF
 	SUDO_USER="${FIRST_USER_NAME}" systemctl enable osss-monitor
 EOF
 
-install -v -d "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config/autostart/"
-install -v -m 600 files/camera-stream.desktop "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config/autostart/"
+install -o ${FIRST_USER_NAME} -v -d "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config/autostart/"
+install -o ${FIRST_USER_NAME}-v -m 600 files/camera-stream.desktop "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config/autostart/"
