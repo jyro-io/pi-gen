@@ -7,7 +7,7 @@ install -v -m 600 files/osss-monitor.service "${ROOTFS_DIR}/lib/systemd/system/"
 
 on_chroot << EOF
 	SUDO_USER="${FIRST_USER_NAME}" systemctl enable osss-monitor
-	SUDO_USER="${FIRST_USER_NAME}" mkdir -p "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config/autostart/"
 EOF
 
-install -o ${FIRST_USER_NAME} -v -m 600 files/camera-stream.desktop "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config/autostart/"
+install -v -d "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config/autostart/"
+install -v -m 600 files/camera-stream.desktop "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/.config/autostart/"
