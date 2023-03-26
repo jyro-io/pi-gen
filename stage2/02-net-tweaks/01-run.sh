@@ -32,5 +32,5 @@ else
 fi
 
 ## osss-camera
-sed -i "s/network={/network={scan_ssid=1/" /etc/wpa_supplicant/wpa_supplicant.conf
+sed -i "s/network={/network={\nscan_ssid=1/" /etc/wpa_supplicant/wpa_supplicant.conf
 ##
