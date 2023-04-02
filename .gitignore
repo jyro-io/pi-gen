@@ -7,3 +7,5 @@ SKIP_IMAGES
 .pc
 *-pc
 apt-cacher-ng/
+stage2/02-net-tweaks/files/hostapd.conf
+osss-monitor/00-install/files/
