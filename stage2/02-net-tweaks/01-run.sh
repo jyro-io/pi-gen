@@ -17,7 +17,7 @@ fi
 if [ -v WPA_ESSID ] && [ -v WPA_PASSWORD ]; then
 on_chroot <<EOF
 set -o pipefail
-wpa_passphrase "${WPA_ESSID}" "${WPA_PASSWORD}" | tee -a "/etc/wpa_supplicant/wpa_supplicant.conf" && \
+wpa_passphrase "${WPA_ESSID}" "${WPA_PASSWORD}" | tee -a "/etc/wpa_supplicant/wpa_supplicant.conf"
 sed -i "s/network={/network={\nscan_ssid=1/" /etc/wpa_supplicant/wpa_supplicant.conf
 EOF
 fi
