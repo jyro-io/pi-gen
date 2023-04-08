@@ -12,6 +12,7 @@ install -v -d "${ROOTFS_DIR}/var/log/motion"
 install -v -m 600 files/motion.conf "${ROOTFS_DIR}/etc/motion/"
 
 on_chroot << EOF
+	SUDO_USER="${FIRST_USER_NAME}" chmod -v +x ${ROOTFS_DIR}/etc/motion/motion.conf
 	SUDO_USER="${FIRST_USER_NAME}" systemctl enable osss-camera
 	SUDO_USER="${FIRST_USER_NAME}" chown -Rv motion:motion /var/log/motion
 	SUDO_USER="${FIRST_USER_NAME}" systemctl enable motion
