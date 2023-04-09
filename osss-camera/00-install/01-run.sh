@@ -6,6 +6,7 @@ install -v -m 600 files/osss-camera "${ROOTFS_DIR}/opt/osss/"
 install -v -m 600 files/config.yaml "${ROOTFS_DIR}/opt/osss/"
 install -v -m 600 files/libcamera-vid.service "${ROOTFS_DIR}/lib/systemd/system/"
 install -v -m 600 files/osss-camera.service "${ROOTFS_DIR}/lib/systemd/system/"
+install -v -m 600 files/motion.service "${ROOTFS_DIR}/lib/systemd/system/"
 
 install -v -d "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/videos"
 install -v -d "${ROOTFS_DIR}/var/log/motion"
