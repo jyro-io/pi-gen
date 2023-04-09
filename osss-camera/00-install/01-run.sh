@@ -10,7 +10,6 @@ install -v -m 600 files/motion.service "${ROOTFS_DIR}/lib/systemd/system/"
 
 install -v -d "${ROOTFS_DIR}/home/${FIRST_USER_NAME}/videos"
 install -v -d "${ROOTFS_DIR}/var/log/motion"
-#install -v -m 600 files/motion.conf "${ROOTFS_DIR}/usr/local/etc/motion/"
 install -v -m 600 files/motion.conf "${ROOTFS_DIR}/etc/motion/"
 
 chmod -v +x ${ROOTFS_DIR}/opt/osss/osss-camera
