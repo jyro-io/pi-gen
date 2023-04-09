@@ -2,3 +2,4 @@ iputils-ping
 curl
 telnet
 net-tools
+htop
