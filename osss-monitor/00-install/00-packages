@@ -3,3 +3,4 @@ curl
 telnet
 net-tools
 htop
+lsof
