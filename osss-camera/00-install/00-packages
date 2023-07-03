@@ -1,8 +1,8 @@
 libcamera-tools
-motion
 iputils-ping
 curl
 telnet
 net-tools
 htop
 lsof
+jq
