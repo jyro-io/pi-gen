@@ -6,3 +6,5 @@ net-tools
 htop
 lsof
 jq
+golang
+make
