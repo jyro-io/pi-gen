@@ -15,7 +15,7 @@ on_chroot << EOF
 	fi
 	cd gocv && \
 	git checkout --force 7811007fdb9f8ea1a32db0913846361be05d4973 && \
-	make -j 4 install_raspi
+	make -j 4 install_raspi_zero
 
 	# build osss-camera
 	SUDO_USER="${FIRST_USER_NAME}" cd /opt/osss/ && \
