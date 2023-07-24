@@ -4,6 +4,5 @@ telnet
 net-tools
 htop
 lsof
-golang
 make
 cmake
